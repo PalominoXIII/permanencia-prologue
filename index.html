@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Este site foi desenvolvido por Edson Jonas, o projeto é um estudo pessoal e não tem fins profissionais-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Permanência - Auxiliar de Atendimento e Calculadora</title>
+    <!-- Linkagem CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!-- Script Textos -->
+    <script src="js/textos.js" defer></script>
+</head>
+
+<body>
+    <!-- Início do cabeçalho -->
+    <header class="cabecalho">
+        <div class="cabecalho-lateral">
+            <i class="fa-solid fa-tractor"></i>
+            <h3>Prologue</h3>
+        </div>
+        <div class="cabecalho-principal">
+            <span class="projeto">PROJETO: </span>
+            <span class="permanencia">permanência</span>
+        </div>
+    </header>
+    <!-- Fim do cabeçalho -->
+    <div class="container">
+        <!-- Início da div do menu lateral -->
+        <div class="menu-lateral">
+            <div class="div-calculadora-desconto">
+                <h3 class="titulo-calculadora">Calculadora de descontos:</h3>
+                <div class="campo-01-desconto">
+                    <div class="valor-mensalidade">
+                        <h3>Valor integral da mensalidade:</h3>
+                    </div>
+                    <div class="input-mensalidade">
+                        <input type="number" id="mensalidade" placeholder="Digite o valor">
+                    </div>
+                </div>
+                <div class="campo-02-desconto">
+                    <div class="valor-desconto">
+                        <h3>Valor da nova bolsa de descontos:</h3>
+                    </div>
+                    <div class="input-desconto">
+                        <input type="number" id="desconto" placeholder="Digite a porcentagem">
+                    </div>
+                </div>
+                <button class="botao" type="button" onclick="calcularDesconto()">Calcular</button>
+                <div class="titulo-1-resultados">
+                    <h3>Resultados:</h3>
+                </div>
+                <div class="div-resultados-desconto">
+                    <div class="texto-resultados-desconto" id="resultadoFinal"></div>
+                </div>
+                <button class="botao-copiar" type="button" onclick="copiarResultado()">Copiar</button>
+            </div>
+        </div> <!-- fim do menu lateral com calculadora de descontos -->
+        <!-- Início da div principal e seus conteúdos -->
+        <div class="div-principal">
+            <div class="div-cabecalho-argumentacao">
+                <h3>Auxiliar de atendimento e Gerador de argumentação:</h3>
+                <button class="botao-aluno" onclick="trocarAluno(0)">Aluno 1</button>
+                <button class="botao-aluno" onclick="trocarAluno(1)">Aluno 2</button>
+                <button class="botao-aluno" onclick="trocarAluno(2)">Aluno 3</button>
+                <button class="botao-aluno" onclick="trocarAluno(3)">Aluno 4</button>
+                <button class="botao-aluno" onclick="trocarAluno(4)">Aluno 5</button>
+                <div id="motivacionalContainer"></div>
+            </div>
+            <div class="linha-atendimento">
+                <div class="div-texto-argumentacao">
+                    <div id="resultadoArgumentacao" class="caixa-resultado"></div>
+                </div>
+            </div> <!-- fim da div principal -->
+            <!-- início da div inputs do usuário -->
+            <div class="div-inputs-geracao">
+                <div class="input-bloco">
+                    <label for="nome"><strong>Nome do aluno:</strong></label>
+                    <input type="text" id="nome" placeholder="Digite o nome">
+                </div>
+                <div class="input-bloco">
+                    <label for="curso"><strong>Curso:</strong></label>
+                    <input type="text" id="curso" placeholder="Digite o curso">
+                </div>
+                <div class="input-bloco">
+                    <label for="ra"><strong>RA:</strong></label>
+                    <input type="text" id="ra" placeholder="Digite o RA">
+                </div>
+                <div class="grupo-botoes">
+                    <button class="botao-iniciar-atendimento" onclick="funcaoPrincipal()">Iniciar Atendimento</button>
+                    <button class="botao-apagar" onclick="apagarAtendimento()">Apagar Atendimento</button>
+                </div>
+            </div>
+            <!-- fim da div inputs do usuário -->
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/script-calculadora.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
